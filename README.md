@@ -4,7 +4,7 @@ Aplikasi Laravel untuk pengelolaan aspirasi masyarakat oleh Fraksi Gerindra DPRD
 
 ## Fitur
 - CRUD aspirasi
-- Sistem prioritas (contoh: metode SMART)
+- Sistem prioritas (VIKOR)
 - Dashboard admin
 
 ## Preview
