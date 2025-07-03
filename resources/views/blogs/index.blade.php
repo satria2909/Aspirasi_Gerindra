@@ -7,17 +7,18 @@
           <div class="swiper-wrapper">
             <section class="islands swiper-slide">
               <img
-                src="{{ asset('frontend/assets/img/blog-hero.jpg') }}"
+                src="{{ asset('frontend/assets/img/background.png') }}"
                 alt=""
                 class="islands__bg"
               />
-
+            <div class="bg__overlay">
               <div class="islands__container container">
                 <div class="islands__data">
-                  <h2 class="islands__subtitle">Our</h2>
-                  <h1 class="islands__title">Blog</h1>
+                  <h2 class="islands__subtitle">Fraksi Partai Gerindra</h2>
+                  <h1 class="islands__title">Berita</h1>
                 </div>
               </div>
+            </div>
             </section>
           </div>
         </div>
@@ -26,11 +27,11 @@
       <!-- blog -->
       <section class="blog section" id="blog">
         <div class="blog__container container">
-          <span class="section__subtitle" style="text-align: center"
-            >All Blog</span
+          <span class="section__subtitle" style="text-align: center; color: #aaa;"
+            >Semua Berita</span
           >
-          <h2 class="section__title" style="text-align: center">
-            Find The Best Travel Story
+          <h2 class="section__title" style="text-align: center; color: #b22222; font-size: 28px; margin-bottom: 10px;">
+            Temukan Berita Terbaru
           </h2>
 
           <div class="blog__content grid">

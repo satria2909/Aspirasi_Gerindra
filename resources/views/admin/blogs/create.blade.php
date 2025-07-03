@@ -25,7 +25,7 @@
                             <div class="form-group row border-bottom pb-4">
                                 <label for="title" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" name="title" value="{{ old('title') }}" id="title" placeholder="example: 5 tips travel">
+                                <input type="text" class="form-control" name="title" value="{{ old('title') }}" id="title" placeholder="example: Judul">
                                 </div>
                             </div>
                             <div class="form-group row border-bottom pb-4">

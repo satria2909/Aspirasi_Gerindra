@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Blog;
 use Illuminate\Http\Request;
-use App\Models\TravelPackage;
+use App\Models\Anggota;
 
 class HomeController extends Controller
 {
@@ -15,9 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $travel_packages = TravelPackage::with('galleries')->get();
+        $anggotas = Anggota::with('galleries')->get();
         $blogs = Blog::get()->take(3);
 
-        return view('homepage', compact('travel_packages','blogs'));
+        return view('homepage', compact('anggotas','blogs'));
     }
 }

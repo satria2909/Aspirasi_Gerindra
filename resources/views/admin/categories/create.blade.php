@@ -25,7 +25,7 @@
                             <div class="form-group row border-bottom pb-4">
                                 <label for="name" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-10">
-                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" placeholder="example: Bali">
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}" id="name" placeholder="example: Kategori">
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-success">Save</button>

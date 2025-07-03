@@ -7,12 +7,13 @@
   --first-color-light: hsl(228, 62%, 59%);
   --first-color-lighten: hsl(228, 100%, 97%);
   --second-color: hsl(25, 83%, 53%);
-  --title-color: hsl(228, 57%, 28%);
+  --title-color: #b22222;
   --text-color: hsl(228, 15%, 50%);
   --text-color-light: hsl(228, 12%, 75%);
   --border-color: hsl(228, 99%, 98%);
   --body-color: #fff;
   --container-color: #fff;
+  --text-color-red:#b22222;
 }
 
 /* Responsive typography */
@@ -132,6 +133,30 @@ body.dark-theme {
   background-color: #56575d;
 }
 
+/* ========== FORM DARK MODE ========== */
+.dark-theme .aspirasi-form {
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+.dark-theme .aspirasi-form input,
+.dark-theme .aspirasi-form textarea,
+.dark-theme .aspirasi-form select {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #444;
+}
+
+.dark-theme .aspirasi-form input::placeholder,
+.dark-theme .aspirasi-form textarea::placeholder {
+  color: #aaa;
+}
+
+.dark-theme .aspirasi-form button {
+  background-color: var(--first-color);
+  color: white;
+}
+
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1024px;
@@ -173,6 +198,7 @@ body.dark-theme {
   position: fixed;
   top: 0;
   left: 0;
+  height: auto;
   width: 100%;
   background-color: transparent;
   z-index: 100;
@@ -253,6 +279,7 @@ body.dark-theme {
   .nav__link span {
     display: none;
   }
+  
 }
 
 /* Change background header */
@@ -272,7 +299,7 @@ body.dark-theme {
 
 /* Active link */
 .active-link {
-  background: linear-gradient(101deg, #3858d6, #2948c7);
+  background: linear-gradient(101deg, #e57676, #e57676);
   color: #fff;
   -webkit-box-shadow: 0 4px 8px rgba(39, 69, 190, 0.25);
           box-shadow: 0 4px 8px rgba(39, 69, 190, 0.25);
@@ -754,9 +781,12 @@ body.dark-theme {
   color: var(--second-color);
 }
 
-.footer__description,
+.footer__description{
+  font-size: 0.9rem;
+}
+
 .footer__link {
-  font-size: 0.813rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 
@@ -770,7 +800,7 @@ body.dark-theme {
   -ms-grid-columns: (max-content)[2];
       grid-template-columns: repeat(2, -webkit-max-content);
       grid-template-columns: repeat(2, max-content);
-  gap: 2.5rem 4rem;
+  gap: 2rem 2rem;
 }
 
 .footer__title {
@@ -779,7 +809,7 @@ body.dark-theme {
 }
 
 .footer__links {
-  row-gap: 0.5rem;
+  row-gap: 0.2rem;
 }
 
 .footer__link {
@@ -801,8 +831,9 @@ body.dark-theme {
 }
 
 .footer__social-link {
-  font-size: 1.25rem;
-  color: var(--text-color);
+  font-size: 1.5rem;
+  
+  color: var(--text-color-red);
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -1323,6 +1354,7 @@ body.dark-theme {
   .islands__title {
     font-size: 5rem;
   }
+  
 }
 
 /* Controls */
@@ -1402,6 +1434,7 @@ body.dark-theme {
     padding: 0.5rem;
     border-radius: 1.25rem;
   }
+  
   .controls__container {
     -webkit-column-gap: 1.5rem;
     column-gap: 1.5rem;

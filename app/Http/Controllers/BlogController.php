@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\TravelPackage;
+use App\Models\Anggota;
 
 class BlogController extends Controller
 {
@@ -22,11 +22,11 @@ class BlogController extends Controller
                 ->where('category_id', $blog->category_id)
                 ->get();
         $categories = Category::get();
-        $travel_packages = TravelPackage::with('galleries')->get()->take(2);
+        $anggotas = Anggota::with('galleries')->get()->take(2);
 
         $blog->incrementReadCount();
 
-        return view('blogs.show', compact('blog','travel_packages','relatedBlogs','categories'));
+        return view('blogs.show', compact('blog','anggotas','relatedBlogs','categories'));
     }
 
     public function category(Category $category)

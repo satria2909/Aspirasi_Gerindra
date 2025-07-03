@@ -8,7 +8,7 @@
             <!--========== ISLANDS 1 ==========-->
             <section class="islands swiper-slide">s
                 <img
-                    src="{{ asset('frontend/assets/img/hero.jpg') }}"
+                    src="{{ asset('frontend/assets/img/welcome3.png') }}"
                     alt=""
                     class="islands__bg"
                 />
@@ -18,15 +18,15 @@
                             class="islands__data"
                             style="z-index: 99; position: relative">
                             <h2 class="islands__subtitle">
-                                Explore
+                                Fraksi Partai Gerindra
                             </h2>
                             <h1 class="islands__title">
-                                Wonderfull Indonesia
+                                Selamat Datang
                             </h1>
                             <p class="islands__description">
-                                It's the perfect time travel and
-                                enjoy the <br />
-                                beauty of the world.
+                                Di Website Resmi Fraksi Partai Gerindra
+                                <br />
+                                DPRD Kota Semarang
                             </p>
                         </div>
                     </div>
@@ -37,56 +37,33 @@
 </section>
 
 <!--==================== LOGOS ====================-->
-<section
-    class="logos"
-    style="margin-top: 9rem; padding-bottom: 3rem"
->
-    <div class="logos__container container grid">
-        <div class="logos__img">
-            <img src="{{ asset('frontend/assets/img/tripadvisor.png') }}" alt="" />
-        </div>
-        <div class="logos__img">
-            <img src="{{ asset('frontend/assets/img/airbnb.png') }}" alt="" />
-        </div>
-        <div class="logos__img">
-            <img src="{{ asset('frontend/assets/img/booking.png') }}" alt="" />
-        </div>
-        <div class="logos__img">
-            <img src="{{ asset('frontend/assets/img/airasia.png') }}" alt="" />
-        </div>
-        
-        
-    </div>
-</section>
+
 
 <!--==================== POPULAR ====================-->
 <section class="section" id="popular">
     <div class="container">
-        <span class="section__subtitle" style="text-align: center"
-            >Best Choice</span
-        >
-        <h2 class="section__title" style="text-align: center">
-            Popular Places
+        
+        <h2 class="section__title" style="font-size: 2.5rem; font-weight: bold; color: #b22222; margin-bottom: 1rem; text-align: center;">
+            Anggota Fraksi Partai Gerindra </br> DPRD Kota Semarang
         </h2>
 
         <div class="popular__container swiper">
+
             <div class="swiper-wrapper">
-                @foreach($travel_packages as $travel_package)
+                @foreach($anggotas as $anggota)
                     <article class="popular__card swiper-slide">
-                        <a href="{{ route('travel_package.show', $travel_package->slug) }}">
+                        <a href="{{ route('anggota.show', $anggota->slug) }}">
                             <img
-                                src="{{ Storage::url($travel_package->galleries->first()->images) }}"
+                                src="{{ Storage::url($anggota->galleries->first()->images) }}"
                                 alt=""
                                 class="popular__img"
                             />
                             <div class="popular__data">
-                                <h2 class="popular__price">
-                                    <span>Rp </span>{{ number_format($travel_package->price) }}
-                                </h2>
+                                
                                 <h3 class="popular__title">
-                                    {{ $travel_package->location}}
+                                    {{ $anggota->nama}}
                                 </h3>
-                                <p class="popular__description">{{ $travel_package->type }}</p>
+                                <p class="popular__description">{{ $anggota->jabatan }}</p>
                             </div>
                         </a>
                     </article>
@@ -103,124 +80,14 @@
     </div>
 </section>
 
-<!--==================== VALUE ====================-->
-<section class="value section" id="value">
-    <div class="value__container container grid">
-        <div class="value__images">
-            <div class="value__orbe"></div>
-
-            <div class="value__img">
-                <img src="{{ asset('frontend/assets/img/team.jpg') }}" alt="" />
-            </div>
-        </div>
-
-        <div class="value__content">
-            <div class="value__data">
-                <span class="section__subtitle">Why Choose Us</span>
-                <h2 class="section__title">
-                    Experience That We Promise To You
-                </h2>
-                <p class="value__description">
-                    We always ready to serve by providing the best
-                    service for you. We make a good choices to
-                    travel around the world.
-                </p>
-            </div>
-
-            <div class="value__accordion">
-                <div class="value__accordion-item">
-                    <header class="value__accordion-header">
-                        <i
-                            class="bx bxs-shield-x value-accordion-icon"
-                        ></i>
-                        <h3 class="value__accordion-title">
-                            Best places in the world
-                        </h3>
-                        <div class="value__accordion-arrow">
-                            <i class="bx bxs-down-arrow"></i>
-                        </div>
-                    </header>
-
-                    <div class="value__accordion-content">
-                        <p class="value__accordion-description">
-                            We provides the best places around the
-                            world and have a good quality of
-                            service.
-                        </p>
-                    </div>
-                </div>
-                <div class="value__accordion-item">
-                    <header class="value__accordion-header">
-                        <i
-                            class="bx bxs-x-square value-accordion-icon"
-                        ></i>
-                        <h3 class="value__accordion-title">
-                            Affordable price for you
-                        </h3>
-                        <div class="value__accordion-arrow">
-                            <i class="bx bxs-down-arrow"></i>
-                        </div>
-                    </header>
-
-                    <div class="value__accordion-content">
-                        <p class="value__accordion-description">
-                            We try to make your budget fit with the
-                            destination that you want to go.
-                        </p>
-                    </div>
-                </div>
-                <div class="value__accordion-item">
-                    <header class="value__accordion-header">
-                        <i
-                            class="bx bxs-bar-chart-square value-accordion-icon"
-                        ></i>
-                        <h3 class="value__accordion-title">
-                            Best plan for your time
-                        </h3>
-                        <div class="value__accordion-arrow">
-                            <i class="bx bxs-down-arrow"></i>
-                        </div>
-                    </header>
-
-                    <div class="value__accordion-content">
-                        <p class="value__accordion-description">
-                            Provides you with time properly.
-                        </p>
-                    </div>
-                </div>
-                <div class="value__accordion-item">
-                    <header class="value__accordion-header">
-                        <i
-                            class="bx bxs-check-square value-accordion-icon"
-                        ></i>
-                        <h3 class="value__accordion-title">
-                            Security guarantee
-                        </h3>
-                        <div class="value__accordion-arrow">
-                            <i class="bx bxs-down-arrow"></i>
-                        </div>
-                    </header>
-
-                    <div class="value__accordion-content">
-                        <p class="value__accordion-description">
-                            We make sure that our services have a
-                            good of security
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- blog -->
 <section class="blog section" id="blog">
     <div class="blog__container container">
         <span class="section__subtitle" style="text-align: center"
-            >Our Blog</span
+            ></span
         >
-        <h2 class="section__title" style="text-align: center">
-            The Best Trip For You
+        <h2 class="section__title" style="font-size: 2.5rem; font-weight: bold; color: #b22222; margin-bottom: 1rem; text-align: center;">
+            Berita Fraksi Gerindra
         </h2>
 
         <div class="blog__content grid">

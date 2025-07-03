@@ -1,4 +1,4 @@
-# Travel Website Dengan Laravel
+# Website Aspirasi Fraksi Gerindra Dengan Laravel dan Penggunaan Metode VIKOR Untuk Prioritas Aspirasi
 
 ## Preview
 
@@ -7,7 +7,7 @@
 ### Download Project
 
 ```bash
-  git clone https://github.com/abdulaziz-m5u/travel-website-laravel.git project-name
+  git clone https://github.com/satria2909/Aspirasi_Gerindra.git project-name
 ```
 
 Go to the project directory

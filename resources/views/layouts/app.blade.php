@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="{{ asset('css/fontawesome.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     @yield('styles')
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
     <!-- Navbar -->
@@ -29,9 +30,14 @@
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
-                    {{ Auth::user()->name }}
-                </a>
+            <a class="nav-link d-flex align-items-center" data-toggle="dropdown" href="#" aria-expanded="false">
+                <img src="{{ Auth::user()->profile_photo_url ?? asset('images/satria.jpg') }}" 
+                    class="img-circle elevation-2 mr-2" 
+                    alt="User Image" 
+                    style="width: 30px; height: 30px; object-fit: cover;">
+                {{ Auth::user()->name }}
+            </a>
+
                 <div class="dropdown-menu dropdown-menu-right" style="left: inherit; right: 0px;">
                     <a href="{{ route('admin.profile.show') }}" class="dropdown-item">
                         <i class="mr-2 fas fa-file"></i>
@@ -53,13 +59,13 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/" class="brand-link">
-            <img src="{{ asset('images/AdminLTELogo.png') }}" alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <img src="{{ asset('images/logo_gerindra.png') }}" alt="AdminLTE Logo"
+                 class="brand-image img-square elevation-0"
+                 >
+            <span class="brand-text font-weight-regular">Panel Admin</span>
         </a>
 
         @include('layouts.navigation')
@@ -113,10 +119,10 @@
     <footer class="main-footer">
         <!-- To the right -->
         <div class="float-right d-none d-sm-inline">
-            Anything you want
+            Satria Davaaaaaa
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-2025 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
 </div>
 <!-- ./wrapper -->
@@ -126,6 +132,7 @@
 @vite('resources/js/app.js')
 <!-- AdminLTE App -->
 <script src="{{ asset('js/adminlte.min.js') }}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 @yield('scripts')
 </body>

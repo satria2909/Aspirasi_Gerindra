@@ -34,27 +34,19 @@
               </div>
             </div>
             <div class="package-travel">
-              <h3>Favorite Places</h3>
-              <ul>
-                @foreach($categories as $category)
-                    <li>
-                        <a href="{{ route('blog.category', $category->slug) }}">{{ $category->name }}</a>
-                    </li>
-                @endforeach
-              </ul>
-              <h3 style="margin-bottom: 1rem">Popular Trip</h3>
-              @foreach($travel_packages as $travel_package)
+              
+              <h3 style="margin-bottom: 1rem">Biografi Anggota</h3>
+              @foreach($anggotas as $anggota)
                 <article class="popular__card" style="margin-bottom: 1rem">
-                  <a href="{{ route('travel_package.show', $travel_package->slug) }}">
+                  <a href="{{ route('anggota.show', $anggota->slug) }}">
                     <img
-                      src="{{ Storage::url($travel_package->galleries->first()->images) }}"
+                      src="{{ Storage::url($anggota->galleries->first()->images) }}"
                       alt=""
                       class="popular__img"
                     />
                     <div class="popular__data">
-                      <h2 class="popular__price"><span>$</span>{{ number_format($travel_package->price,2) }}</h2>
-                      <h3 class="popular__title">{{ $travel_package->location }}</h3>
-                      <p class="popular__description">{{ $travel_package->type }}</p>
+                      <h3 class="popular__title">{{ $anggota->nama }}</h3>
+                      <p class="popular__description">{{ $anggota->jabatan }}</p>
                     </div>
                   </a>
                 </article>
@@ -67,10 +59,10 @@
       <section class="blog" id="blog">
         <div class="blog__container container">
           <span class="section__subtitle" style="text-align: center"
-            >Related Blog</span
+            >Berita Terbaru</span
           >
           <h2 class="section__title" style="text-align: center">
-            Find The Best Places
+            Berita Fraksi
           </h2>
 
           <div class="blog__content grid">

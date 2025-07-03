@@ -9,6 +9,7 @@
             href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
             rel="stylesheet"
         />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
         <!--=============== SWIPER CSS ===============-->
         <link rel="stylesheet" href="{{ asset('frontend/assets/libraries/swiper-bundle.min.css') }}" />
@@ -16,46 +17,67 @@
         <!--=============== CSS ===============-->
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}" />
         @stack('style-alt')
-        <title>GoTravel</title>
+        <title> Fraksi Gerindra</title>
+        <link rel="icon" href="{{ asset('images/logo_gerindra.png') }}" type="image/png">
+        <style>
+            /* Warna default merah untuk semua link */
+            .nav__link {
+                color: #b22222; /* Merah */
+                text-decoration: none; /* Hilangkan garis bawah */
+                transition: color 0.3s ease; /* Efek transisi halus */
+            }
+
+            /* Warna merah lebih gelap saat hover */
+            .nav__link:hover {
+                color: #8b0000; /* Merah tua */
+            }
+
+            /* Warna biru untuk link aktif */
+            .active-link {
+                color: #8b0000 !important; /* Biru (gunakan !important untuk prioritas lebih tinggi) */
+                font-weight: bold; /* Opsional: buat teks aktif lebih tebal */
+            }
+        </style>
+
+
     </head>
     <body>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
                 <a href="{{ route('homepage') }}" class="nav__logo"
-                    >G<i class="bx bxs-map"></i> TRAVEL</a
-                >
+                    ><img src="{{ asset('frontend/assets/img/logo_gerindra.png') }}" alt="Fraksi Gerindra" style="width: 140px; height: 45px;"></a>
 
                 <div class="nav__menu">
                     <ul class="nav__list">
                         <li class="nav__item">
                             <a href="{{ route('homepage') }}" class="nav__link {{ request()->is('/') ? ' active-link' : '' }}">
                                 <i class="bx bx-home-alt"></i>
-                                <span>Home</span>
+                                <span>Beranda</span>
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="{{ route('travel_package.index') }}" class="nav__link {{ request()->is('travel-packages') || request()->is('travel-packages/*')  ? ' active-link' : '' }}">
-                                <i class="bx bx-building-house"></i>
-                                <span>Package Travel</span>
+                            <a href="{{ route('anggota.index') }}" class="nav__link {{ request()->is('anggotas') || request()->is('anggotas/*')  ? ' active-link' : '' }}">
+                                <i class="bx bx-user"></i>
+                                <span>Profil</span>
                             </a>
                         </li>
                         <li class="nav__item">
                             <a href="{{ route('blog.index') }}" class="nav__link {{ request()->is('blogs') || request()->is('blogs/*')  ? ' active-link' : '' }}">
-                                <i class="bx bx-award"></i>
-                                <span>Blog</span>
+                                <i class="bx bx-news"></i>
+                                <span>Berita</span>
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a href="{{ route('contact') }}" class="nav__link {{ request()->is('contact') ? ' active-link' : '' }}">
-                                <i class="bx bx-phone"></i>
-                                <span>Contact</span>
+                            <a href="{{ route('aspirasi') }}" class="nav__link {{ request()->is('aspirasi') ? ' active-link' : '' }}">
+                                <i class="bx bx-message"></i>
+                                <span>Aspirasi</span>
                             </a>
                         </li>
                         <li class="nav__item">
-                            <a target="_blank" href="https://terabox.com/s/1x7niig9kNll5T6YIwVqd5w" class="nav__link {{ request()->is('') ? ' active-link' : '' }}">
+                            <a href="{{ route('galeri') }}" class="nav__link {{ request()->is('galeri') ? ' active-link' : '' }}">
                                 <i class="bx bx-photo-album"></i>
-                                <span>Dokumentasi</span>
+                                <span>Galeri</span>
                             </a>
                         </li>
                     </ul>
@@ -78,64 +100,52 @@
             <div class="footer__container container grid">
                 <div>
                     <a href="{{ route('homepage') }}" class="footer__logo">
-                        G<i class="bx bxs-map"></i> TRAVEL
+                    <img src="{{ asset('frontend/assets/img/logo_gerindra.png') }}" alt="Fraksi Gerindra"  style="width: 140px; height: 45px;">
                     </a>
                     <p class="footer__description">
-                        Our vision is to help people find the <br />
-                        best places to travel with high security
+                    Kalau bukan kita, siapa lagi? Kalau <br /> bukan sekarang, kapan lagi? <br /> <br />
+                    Mari bergabung bersama Gerindra <br /> untuk #SelamatkanIndonesia.
+
                     </p>
                 </div>
 
                 <div class="footer__content">
                     <div>
-                        <h3 class="footer__title">About</h3>
+                        <h3 class="footer__title">Quick Links</h3>
 
                         <ul class="footer__links">
                             <li>
-                                <a href="#" class="footer__link">About Us</a>
+                                <a href="#" class="footer__link">Tentang Fraksi Gerindra</a>
                             </li>
                             <li>
-                                <a href="#" class="footer__link">Features </a>
+                                <a href="#" class="footer__link">Privacy & Policy</a>
                             </li>
                             <li>
-                                <a href="#" class="footer__link">News & Blog</a>
+                                <a href="#" class="footer__link">Term & Conditions</a>
                             </li>
                         </ul>
                     </div>
+                    
                     <div>
-                        <h3 class="footer__title">Company</h3>
+                        <h3 class="footer__title">Hubungi Kami</h3>
 
                         <ul class="footer__links">
                             <li>
-                                <a href="#" class="footer__link"
-                                    >How We Work?
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link">Capital </a>
-                            </li>
-                            <li>
-                                <a href="#" class="footer__link"> Security</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="footer__title">Support</h3>
-
-                        <ul class="footer__links">
-                            <li>
-                                <a href="#" class="footer__link">FAQs </a>
+                                <a href="#" class="footer__link">
+                                    Email: ppid@gerindra.id</a>
                             </li>
                             <li>
                                 <a href="#" class="footer__link"
-                                    >Support center
+                                    >Phone: (021) 7892377, 7801396
                                 </a>
                             </li>
                             <li>
-                                <a href="#" class="footer__link"> Contact Us</a>
+                                <a href="#" class="footer__link">
+                                    Address: Jl. Harsono RM no. 54,<br /> Ragunan, Pasar Minggu,<br /> Jakarta Selatan 12160</a>
                             </li>
                         </ul>
                     </div>
+
                     <div>
                         <h3 class="footer__title">Follow us</h3>
 
@@ -147,7 +157,10 @@
                                 <i class="bx bxl-instagram-alt"></i>
                             </a>
                             <a href="#" class="footer__social-link">
-                                <i class="bx bxl-pinterest"></i>
+                                <i class="bx bxl-youtube"></i>
+                            </a>
+                            <a href="#" class="footer__social-link">
+                                <i class="bx bxl-twitter"></i>
                             </a>
                         </ul>
                     </div>
@@ -159,8 +172,7 @@
                     &#169; All rigths reserved
                 </span>
                 <div class="footer__privacy">
-                    <a href="#">Terms & Agreements</a>
-                    <a href="#">Privacy Policy</a>
+                    <a href="#">Dikelola Oleh Intern USM</a>
                 </div>
             </div>
         </footer>
@@ -172,6 +184,8 @@
 
         <!--=============== SCROLLREVEAL ===============-->
         <script src="{{ asset('frontend/assets/libraries/scrollreveal.min.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
         <!--=============== SWIPER JS ===============-->
         <script src="{{ asset('frontend/assets/libraries/swiper-bundle.min.js') }}"></script>

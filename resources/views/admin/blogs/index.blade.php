@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12 justify-content-between d-flex">
-                    <h1 class="m-0">{{ __('Blog') }}</h1>
+                    <h1 class="m-0">{{ __('Berita') }}</h1>
                     <a href="{{ route('admin.blogs.create') }}" class="btn btn-primary btn-sm"> <i class="fa fa-plus"></i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,10 +27,10 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Title</th>
-                                        <th>Image</th>
-                                        <th>Excerpt</th>
-                                        <th>Category</th>
+                                        <th>Judul</th>
+                                        <th>Gambar</th>
+                                        <th>Kutipan</th>
+                                        <th>Kategori</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
