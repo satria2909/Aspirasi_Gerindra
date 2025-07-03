@@ -1,10 +1,17 @@
-# Website Aspirasi Fraksi Gerindra Dengan Laravel dan Penggunaan Metode VIKOR Untuk Prioritas Aspirasi
+# Aspirasi Gerindra
+
+Aplikasi Laravel untuk pengelolaan aspirasi masyarakat oleh Fraksi Gerindra DPRD Kota Semarang.
+
+## Fitur
+- CRUD aspirasi
+- Sistem prioritas (contoh: metode SMART)
+- Dashboard admin
 
 ## Preview
 
 ![preview img](/preview.png)
 
-### Download Project
+### Download Project & Instalasi
 
 ```bash
   git clone https://github.com/satria2909/Aspirasi_Gerindra.git project-name
